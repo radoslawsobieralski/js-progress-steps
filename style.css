@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+
+:root {
+  --primary-color: hsl(0, 66%, 50%);
+  --secondary-color: hsl(0, 0%, 80%);
+}
+
+body {
+  background-color: hsl(0, 0%, 90%);
+  font-family: "Open Sans", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+}
+
+.progress-container {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: 1.875em;
+  max-width: 100%;
+  width: 21.875em;
+}
+
+.progress-container::before {
+  content: "";
+  background-color: var(--secondary-color);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 0.25em;
+  width: 100%;
+  z-index: -1;
+}
+
+.progress {
+  background-color: var(--primary-color);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 0.25em;
+  width: 0%;
+  z-index: -1;
+  transition: 0.4s ease;
+}
+
+.circle {
+  background-color: #ffffff;
+  color: hsl(0, 0%, 60%);
+  border-radius: 50%;
+  height: 1.875em;
+  width: 1.875em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0.25em solid var(--secondary-color);
+  transition: 0.4s ease;
+}
+
+.circle.active {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+.btn {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  border: 0;
+  border-radius: 0.375em;
+  cursor: pointer;
+  font-family: inherit;
+  padding: 0.5em 1.875em;
+  font-size: 0.875rem;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn:disabled {
+  background-color: var(--secondary-color);
+  cursor: not-allowed;
+}
